@@ -1,11 +1,16 @@
 from fastapi import FastAPI
 
+'''from pydantic import BaseModel
+from predict import predict
+
+import sys
+sys.path.append('../immo-eliza-ml')
+
+class User_input(BaseModel):
+    operat'''
+
 app = FastAPI()
 
 @app.get('/')
 def index():
-    return {'data':{'name':'Audrey'}}
-
-@app.get('/about')
-def index():
-    return {'data':'About this page'}
+    return {'data':'This API is working fine'}

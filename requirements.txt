@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pydantic
+streamlit
+
+
+click
+joblib
+pandas
