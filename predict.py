@@ -1,10 +1,7 @@
 import joblib
 import pandas as pd
 
-def predict(input_dataset, output_dataset):
-    """Predicts house prices from 'input_dataset', stores it to 'output_dataset'."""
-
-    # Load the model artifacts using joblib
+def predict(file_path):
     artifacts = joblib.load("models/artifacts.joblib")
 
     # Unpack the artifacts
@@ -16,11 +13,14 @@ def predict(input_dataset, output_dataset):
     model = artifacts["model"]
 
     # Extract the used data
-    data = input_dataset[num_features + fl_features + cat_features]
+
+    data = pd.read_csv(file_path)
+
 
     # Apply imputer and encoder on data
     data[num_features] = imputer.transform(data[num_features])
     data_cat = enc.transform(data[cat_features]).toarray()
+
 
     # Combine the numerical and one-hot encoded categorical columns
     data = pd.concat(
@@ -33,11 +33,4 @@ def predict(input_dataset, output_dataset):
 
     # Make predictions
     predictions = model.predict(data)
-    predictions = predictions  # just picking 10 to display sample output :-)
-
-    ### -------- DO NOT TOUCH THE FOLLOWING LINES -------- ###
-    # Save the predictions to a CSV file (in order of data input!)
-    pd.DataFrame({"predictions": predictions}).to_csv(output_dataset, index=False)
-
-
-
+    return predictions.tolist()
