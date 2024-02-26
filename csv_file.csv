@@ -1,2 +1,2 @@
-nbr_frontages,fl_terrace,equipped_kitchen
-3,False,INSTALLED
+nbr_frontages,nbr_bedrooms,latitude,longitude,total_area_sqm,surface_land_sqm,terrace_sqm,garden_sqm,province,heating_type,state_building,property_type,epc,locality,subproperty_type,region,fl_terrace,fl_garden,fl_swimming_pool
+2,2,51.2171725,4.3799821,100.0,,5.0,0.0,Antwerp,GAS,MISSING,APARTMENT,C,Antwerp,APARTMENT,Flanders,True,False,False
