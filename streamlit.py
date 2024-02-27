@@ -96,11 +96,11 @@ subproperty_type = st.selectbox('Select type of subproperty:',[
     "CASTLE"
 ])
 nbr_bedrooms = st.number_input('Number of Bedrooms:', min_value=0, max_value=10, value=1)
-surface_area = st.number_input('Surface Area (sqm):', min_value=0.0, step=10.0, value=1)
-garden_sqm = st.number_input('Garden Area (sqm):', min_value=0.0, step=10.0, value=1)
-total_area_sqm = st.number_input('Living Area (sqm):', min_value=0.0, step=10.0, value=1)
-surface_land_sqm = st.number_input('Plot Area (sqm):', min_value=0.0, step=10.0, value=1)
-terrace_sqm = st.number_input('Terrace Area (sqm):', min_value=0.0, step=2.0, value=1)
+surface_area = st.number_input('Surface Area (sqm):', min_value=0.0, step=10.0)
+garden_sqm = st.number_input('Garden Area (sqm):', min_value=0.0, step=10.0)
+total_area_sqm = st.number_input('Living Area (sqm):', min_value=0.0, step=10.0)
+surface_land_sqm = st.number_input('Plot Area (sqm):', min_value=0.0, step=10.0)
+terrace_sqm = st.number_input('Terrace Area (sqm):', min_value=0.0, step=2.0)
 
 
 locality = st.selectbox('Locality:', [
