@@ -1,7 +1,7 @@
 import requests
 import json
 
-with open("test.json", "r") as f:
+with open("src/test.json", "r") as f:
     data = json.load(f)
 
 response = requests.post("http://127.0.0.1:8000/predict", json=data["data"])
