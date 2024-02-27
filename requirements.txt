@@ -1,8 +1,5 @@
 fastapi
 uvicorn
+
 pydantic
 streamlit
-
-pandas
-numpy
-watchdog
