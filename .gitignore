@@ -1,2 +1,5 @@
-fastapi-env
-uvicorn
+*
+
+!.gitignore
+!requirements.txt
+!Dockerfile
