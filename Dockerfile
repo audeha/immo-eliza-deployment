@@ -1,13 +1,17 @@
 FROM python:3.9-slim
 
-WORKDIR /app
+WORKDIR /immo-eliza-deployment
 
-COPY . .
+COPY requirements.txt .
+COPY ./src ./src
+
+
 
 RUN pip3 install -r requirements.txt
 
-EXPOSE 8501
+EXPOSE 8000
 
-HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
+HEALTHCHECK CMD curl --fail http://localhost:8000/_stcore/health
 
-CMD streamlit run app.py
+CMD ["python3", "./src/main.py"]
+
