@@ -16,7 +16,7 @@ equipped_kitchen=st.radio("pick kitchen type",['USA_UNINSTALLED','USA_SEMI_EQUIP
                                                'USA_INSTALLED', 'NOT_INSTALLED', 'USA_HYPER_EQUIPPED',
                                                'SEMI_EQUIPPED', 'HYPER_EQUIPPED', 'INSTALLED', 'MISSING'])
 nbr_frontages = st.number_input('Number of Frontages:', min_value=0, max_value=10, value=1)
-fl_terrace = st.number_input('Surface terrace (sqm):', min_value=0.0, step=20.0)
+fl_terrace = st.radio('Surface terrace (sqm):', [0, 1])
 
 #Button to trigger prediction
 if st.button('Predict Price'):
