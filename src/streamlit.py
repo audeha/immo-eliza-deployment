@@ -1,4 +1,4 @@
-import streamlit as st
+import src.streamlit as st
 import requests
 
 #Define the URL of the FastAPI endpoint
