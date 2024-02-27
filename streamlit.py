@@ -15,7 +15,7 @@ st.header('Enter Features for Prediction')
 equipped_kitchen=st.selectbox("Pick kitchen type",['USA_UNINSTALLED','USA_SEMI_EQUIPPED',
                                                'USA_INSTALLED', 'NOT_INSTALLED', 'USA_HYPER_EQUIPPED',
                                                'SEMI_EQUIPPED', 'HYPER_EQUIPPED', 'INSTALLED', 'MISSING'])
-nbr_frontages = st.selectbox('Number of Frontages:', min_value=0, max_value=10, value=1)
+nbr_frontages = st.number_input('Number of Frontages:', min_value=0, max_value=10, value=1)
 fl_terrace = st.selectbox('Terrace ?:',  [0, 1])
 fl_garden = st.selectbox('Garden ?:',  [0, 1])
 fl_swimming_pool = st.selectbox('Swimming pool ?:',  [0, 1])
