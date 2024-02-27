@@ -32,7 +32,7 @@ if st.button('Predict Price'):
     try:
         response = requests.post(FASTAPI_URL, json=input_data)
         if response.status_code == 200:
-            predicted_price = response.json()[predicted_price]
+            predicted_price = response.json()
             st.success(f'Predicted Price: £{predicted_price:.2f}')
         else:
             st.error('Failed to get prediction. Please try again.')
