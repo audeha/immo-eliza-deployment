@@ -9,8 +9,6 @@ COPY ./src ./src
 
 RUN pip3 install -r requirements.txt
 
-EXPOSE 8000
-
-HEALTHCHECK CMD curl --fail http://localhost:8000/_stcore/health
+EXPOSE 8501
 
 CMD ["python3", "./src/main.py"]
