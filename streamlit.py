@@ -27,3 +27,16 @@ if st.button('Predict Price'):
         'fl_terrace': fl_terrace,
         # Add more features as needed
     }
+
+    # Make POST request to FastAPI endpoint
+    try:
+        response = requests.post(FASTAPI_URL, json=input_data)
+        if response.status_code == 200:
+            predicted_price = response.json()['predicted_price']
+            st.success(f'Predicted Price: £{predicted_price:.2f}')
+        else:
+            st.error('Failed to get prediction. Please try again.')
+    except Exception as e:
+        st.error(f'An error occurred: {str(e)}')
+
+
