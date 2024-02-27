@@ -42,8 +42,9 @@ async def create_item(item: Item):
         writer.writerow(item.model_dump().values())
 
     return predict("csv_file.csv")
-    
 
+if __name__ == "__main__":
+    uvicorn.run(app, port=8000, host="0.0.0.0")
 
 # run to set up connection:
 # uvicorn main:app --reload
