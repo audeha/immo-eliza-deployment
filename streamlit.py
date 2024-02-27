@@ -17,7 +17,7 @@ equipped_kitchen=st.selectbox("Pick kitchen type",['USA_UNINSTALLED','USA_SEMI_E
                                                'SEMI_EQUIPPED', 'HYPER_EQUIPPED', 'INSTALLED', 'MISSING'])
 nbr_frontages = st.selectbox('Number of Frontages:', min_value=0, max_value=10, value=1)
 fl_terrace = st.selectbox('Terrace ?:',  [0, 1])
-fl_garden = st.('Garden ?:',  [0, 1])
+fl_garden = st.number_input('Garden ?:',  [0, 1])
 fl_swimming_pool = st.selectbox('Swimming pool ?:',  [0, 1])
 property_type=st.selectbox("Pick property type",['House','appartement'])
 longitude = st.slider("Longitude", min_value=5.479947, max_value=6.385048, step=0.000001)
