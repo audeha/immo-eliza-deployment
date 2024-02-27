@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 import csv
+import uvicorn
+
 from predict import predict
 from typing import Union
 app = FastAPI()
