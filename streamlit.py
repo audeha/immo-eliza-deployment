@@ -2,7 +2,11 @@ import streamlit as st
 import requests
 
 #Define the URL of the FastAPI endpoint
+<<<<<<< HEAD
 FASTAPI_URL = 'https://immo-eliza-deployment-15s3.onrender.com/predict'  # Update with your FastAPI endpoint URL
+=======
+FASTAPI_URL = 'https://immo-eliza-deployment.onrender.com/predict'  # Update with your FastAPI endpoint URL
+>>>>>>> 02b43d4c9f444e62d7e32a1cfc8468d2a1e6e928
 
 #Streamlit App Title
 st.title('Price Prediction Web App')
@@ -157,6 +161,7 @@ locality = st.selectbox('Locality:', [
 if st.button('Predict Price'):
     # Prepare input data as JSON
     input_data = {
+<<<<<<< HEAD
   "nbr_frontages": nbr_frontages,
   "equipped_kitchen": equipped_kitchen,
   "nbr_bedrooms": nbr_bedrooms,
@@ -180,6 +185,13 @@ if st.button('Predict Price'):
 }
 
 
+=======
+        'equipped_kitchen':equipped_kitchen,
+        'nbr_frontages': nbr_frontages,
+        'fl_terrace': fl_terrace,
+        # Add more features as needed
+    }
+>>>>>>> 02b43d4c9f444e62d7e32a1cfc8468d2a1e6e928
 
 
     # Make POST request to FastAPI endpoint
