@@ -1,6 +1,8 @@
 import streamlit as st
 import requests
 import folium 
+import time
+
 from streamlit_folium import folium_static, st_folium
 from folium.plugins import Draw
 from folium import plugins
