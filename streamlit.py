@@ -4,8 +4,14 @@ import folium
 from streamlit_folium import folium_static, st_folium
 from folium.plugins import Draw
 from folium import plugins
+
+headers = {
+    "authorization": st.secrets['url'],
+    "content-type": "application/json"
+}
+
 #Define the URL of the FastAPI endpoint
-FASTAPI_URL = 'https://immo-eliza-deployment.onrender.com/predict'  # Update with your FastAPI endpoint URL
+FASTAPI_URL = 'url'
 
 loc_coordinates = {
     "Brussels": (50.8503, 4.3517),
