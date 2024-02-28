@@ -1,13 +1,19 @@
 import streamlit as st
 import requests
 import folium 
+import time
+
 from streamlit_folium import folium_static, st_folium
 from folium.plugins import Draw
 from folium import plugins
+
+headers = {
+    "Content-Type": "application/json"
+}
+
 #Define the URL of the FastAPI endpoint
-FASTAPI_URL = 'https://immo-eliza-deployment.onrender.com/predict'  # Update with your FastAPI endpoint URL
-latitude = 0 
-longitude = 0
+FASTAPI_URL = st.secrets['url']
+
 loc_coordinates = {
     "Brussels": (50.8503, 4.3517),
     "Antwerp": (51.2194, 4.4025),
@@ -200,10 +206,7 @@ equipped_kitchen=st.selectbox("Pick kitchen type",['USA_UNINSTALLED','USA_SEMI_E
                                                'USA_INSTALLED', 'NOT_INSTALLED', 'USA_HYPER_EQUIPPED',
                                                'SEMI_EQUIPPED', 'HYPER_EQUIPPED', 'INSTALLED', 'MISSING'])
 fl_swimming_pool = st.selectbox('Swimming pool ?:',  [0, 1])
-# List of regions and their corresponding provinces
 
-
-      
   
 
 
@@ -243,10 +246,13 @@ if st.button('Predict Price'):
     # Make POST request to FastAPI endpoint
     try:
         response = requests.post(FASTAPI_URL, json=input_data)
-        if response.status_code == 200:
-            predicted_price = response.json()[0]
-            st.success(f'Predicted Price: €{predicted_price:.2f}')
-        else:
-            st.error('Failed to get prediction. Please try again.')
+        predicted_price = response.json()[0]
+
+        progress_bar = st.progress(0)
+        for perc_completed in range(100):
+            time.sleep(0.05)  
+            progress_bar.progress(perc_completed + 1)
+
+        st.success(f'Predicted Price: €{predicted_price:.2f}')
     except Exception as e:
         st.error(f'An error occurred: {str(e)}')
