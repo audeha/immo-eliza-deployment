@@ -58,7 +58,7 @@ loc_coordinates = {
 st.title('Price Prediction Web App')
 
 #Image
-st.image('streamlit', caption='Streamlit Logo', use_column_width=True)
+#st.image('streamlit', caption='Streamlit Logo', use_column_width=True)
 
 #Input features for price prediction
 st.header('Please Enter House Specifications for Prediction')
