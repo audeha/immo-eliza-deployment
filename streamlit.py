@@ -6,12 +6,11 @@ from folium.plugins import Draw
 from folium import plugins
 
 headers = {
-    "authorization": st.secrets['url'],
-    "content-type": "application/json"
+    "Content-Type": "application/json"
 }
 
 #Define the URL of the FastAPI endpoint
-FASTAPI_URL = 'url'
+FASTAPI_URL = st.secrets['url']
 
 loc_coordinates = {
     "Brussels": (50.8503, 4.3517),
