@@ -7,12 +7,12 @@ from streamlit_folium import folium_static, st_folium
 from folium.plugins import Draw
 from folium import plugins
 
-headers = {
-    "Content-Type": "application/json"
-}
+# headers = {
+#     "Content-Type": "application/json"
+# }
 
-#Define the URL of the FastAPI endpoint
-FASTAPI_URL = st.secrets['url']
+# #Define the URL of the FastAPI endpoint
+FASTAPI_URL = 'url'
 
 loc_coordinates = {
     "Brussels": (50.8503, 4.3517),
