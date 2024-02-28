@@ -9,6 +9,7 @@ app = FastAPI()
 
 class Item(BaseModel):
     nbr_frontages: int
+    equipped_kitchen: str
     nbr_bedrooms: int
     latitude: float
     longitude: float
@@ -21,7 +22,7 @@ class Item(BaseModel):
     state_building: str = None
     property_type: str = None
     epc: str = None
-    locality: str = None    
+    locality: str = None
     subproperty_type: str = None
     region: str = None
     fl_terrace: bool
