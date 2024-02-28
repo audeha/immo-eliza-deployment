@@ -78,67 +78,18 @@ terrace_sqm = st.number_input('Terrace Area (sqm):', min_value=0.0, step=2.0)
 fl_garden = st.selectbox('Garden ?:',  [0, 1])
 garden_sqm = st.number_input('Garden Area (sqm):', min_value=0.0, step=10.0)
 property_type=st.selectbox("Pick property type",['House','appartement'])
-subproperty_type = st.selectbox('Select type of subproperty:',[
-    "HOUSE",
-    "APARTMENT",
-    "VILLA",
-    "GROUND_FLOOR",
-    "APARTMENT_BLOCK",
-    "MIXED_USE_BUILDING",
-    "PENTHOUSE",
-    "DUPLEX",
-    "FLAT_STUDIO",
-    "EXCEPTIONAL_PROPERTY",
-    "TOWN_HOUSE",
-    "SERVICE_FLAT",
-    "MANSION",
-    "BUNGALOW",
-    "KOT",
-    "LOFT",
-    "FARMHOUSE",
-    "COUNTRY_COTTAGE",
-    "MANOR_HOUSE",
-    "TRIPLEX",
-    "OTHER_PROPERTY",
-    "CHALET",
-    "CASTLE"
-])
+subproperty_type = st.selectbox('Select type of subproperty:',['HOUSE', 'APARTMENT', 'APARTMENT_BLOCK', 'BUNGALOW', 'CASTLE', 'CHALET', 'COUNTRY_COTTAGE', 'DUPLEX', 'EXCEPTIONAL_PROPERTY', 'FARMHOUSE', 'FLAT_STUDIO', 'GROUND_FLOOR', 'KOT', 'LOFT', 'MANOR_HOUSE', 'MANSION', 'MIXED_USE_BUILDING', 'OTHER_PROPERTY', 'PENTHOUSE', 'SERVICE_FLAT', 'TOWN_HOUSE', 'TRIPLEX', 'VILLA' ])
 
-state_building = st.selectbox('State of building:', [
-    "MISSING",
-    "GOOD",
-    "AS_NEW",
-    "TO_RENOVATE",
-    "TO_BE_DONE_UP",
-    "JUST_RENOVATED",
-    "TO_RESTORE"
-])
 
-epc = st.selectbox('EPC:', [
-    "MISSING",
-    "B",
-    "C",
-    "D",
-    "A",
-    "F",
-    "E",
-    "G",
-    "A+",
-    "A++"
-])
-heating_type = st.selectbox('Type of heating:', [
-    "GAS",
-    "MISSING",
-    "FUELOIL",
-    "ELECTRIC",
-    "PELLET",
-    "WOOD",
-    "SOLAR",
-    "CARBON"
-])
-equipped_kitchen=st.selectbox("Pick kitchen type",['USA_UNINSTALLED','USA_SEMI_EQUIPPED',
-                                               'USA_INSTALLED', 'NOT_INSTALLED', 'USA_HYPER_EQUIPPED',
-                                               'SEMI_EQUIPPED', 'HYPER_EQUIPPED', 'INSTALLED', 'MISSING'])
+state_building = st.selectbox('State of building:', ["AS_NEW","JUST_RENOVATED","GOOD","TO_BE_DONE_UP","TO_RENOVATE","TO_RESTORE","MISSING"])
+
+
+epc = st.selectbox('EPC:', ["A++","A+","A","B","C","D","E","F","G","MISSING",])
+
+heating_type = st.selectbox('Type of heating:', ["GAS","ELECTRIC","PELLET","FUELOIL","WOOD","SOLAR","CARBON","MISSING"])
+
+equipped_kitchen=st.selectbox("Pick kitchen type",['HYPER_EQUIPPED', 'INSTALLED', 'MISSING', 'NOT_INSTALLED', 'SEMI_EQUIPPED', 'USA_HYPER_EQUIPPED', 'USA_INSTALLED', 'USA_SEMI_EQUIPPED', 'USA_UNINSTALLED' ])
+
 fl_swimming_pool = st.selectbox('Swimming pool ?:',  [0, 1])
 # List of regions and their corresponding provinces
 region_province_mapping = {
